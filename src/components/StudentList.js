@@ -6,7 +6,7 @@ function StudentList()
 {
     const [arr,setArr] = useState([]);
     useEffect(()=>{
-        Axios.get("http://localhost:4000/studentdetails/")
+        Axios.get("https://crud-glkk.onrender.com/studentdetails/")
         .then((res)=>{
             if(res.status === 200)
                 setArr(res.data);
@@ -22,7 +22,7 @@ function StudentList()
         })
     }
     return (
-        <table class="table table-bordered table-striped table-success">
+        <table style={{maxWidth:"60%", margin: "50px auto"}} class="table table-bordered table-striped table-success">
             <thead>
                 <tr>
                     <th class="text-center">Name</th>

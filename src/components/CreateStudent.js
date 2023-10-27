@@ -10,7 +10,7 @@ function Createstudent() {
     }
     const handleSubmit = () => {
         const data = {name: arr[0], email: arr[1], rollNo: arr[2]}
-        Axios.post("http://localhost:4000/studentdetails/create-student", data)
+        Axios.post("https://crud-glkk.onrender.com/studentdetails/create-student", data)
         .then((res) => {
             if(res.status === 200) alert("Record added successfully")
             else Promise.reject()
@@ -19,8 +19,14 @@ function Createstudent() {
     }
     return (
         <form onSubmit={handleSubmit}>
-            <StudentForm getState={getState}/>
-       </form>
+            <StudentForm getState={getState}
+                    nameValue=""
+                    emailValue=""
+                    rollNoValue="">
+                Create Student
+            </StudentForm>
+        </form>
+
  )
 }
 export default Createstudent;

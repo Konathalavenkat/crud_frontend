@@ -6,7 +6,7 @@ function StudentListRow(props)
     const {_id,name,email,rollNo} = props.obj; //Object destruction
    
     const handleClick = () =>{
-        Axios.get("http://localhost:4000/studentdetails/delete-student/" + _id )
+        Axios.get("https://crud-glkk.onrender.com/studentdetails/delete-student/" + _id )
         .then((res)=>{
             if(res.status === 200){
                 alert("Record deleted successfully");
@@ -23,7 +23,7 @@ function StudentListRow(props)
             <td>{name}</td>
             <td>{email}</td>
             <td>{rollNo}</td>
-            <td>
+            <td class="d-flex justify-content-center">
                 <button class="btn btn-success">
                     <Link class="text-decoration-none text-light" to={"/edit-student/" + _id}>Edit</Link>
                 </button>
